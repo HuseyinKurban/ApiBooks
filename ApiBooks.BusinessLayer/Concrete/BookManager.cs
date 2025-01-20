@@ -28,6 +28,11 @@ namespace ApiBooks.BusinessLayer.Concrete
            return _bookDal.GetAll();
         }
 
+        public List<Book> TGetBooksWithWriterAndCategoryList()
+        {
+           return _bookDal.GetBooksWithWriterAndCategoryList();
+        }
+
         public Book TGetById(int id)
         {
             return _bookDal.GetById(id);
