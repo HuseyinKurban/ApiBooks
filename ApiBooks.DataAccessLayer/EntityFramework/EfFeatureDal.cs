@@ -12,8 +12,12 @@ namespace ApiBooks.DataAccessLayer.EntityFramework
 {
     public class EfFeatureDal : GenericRepository<Feature>, IFeatureDal
     {
+        private readonly ApiContext _context;
+
         public EfFeatureDal(ApiContext context) : base(context)
         {
+            _context = context;
         }
+
     }
 }

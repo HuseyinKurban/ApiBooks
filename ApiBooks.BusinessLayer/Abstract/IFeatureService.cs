@@ -9,5 +9,6 @@ namespace ApiBooks.BusinessLayer.Abstract
 {
     public interface IFeatureService:IGenericService<Feature>
     {
+      
     }
 }

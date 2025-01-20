@@ -52,5 +52,12 @@ namespace ApiBooks.WebApi.Controllers
             var value = _bookService.TGetById(id);
             return Ok(value);
         }
+
+        [HttpGet("GetLastFourBooks")]
+        public IActionResult GetLastFourBooks()
+        {
+            var value = _bookService.TGetLastFourBooks();
+            return Ok(value);
+        }
     }
 }

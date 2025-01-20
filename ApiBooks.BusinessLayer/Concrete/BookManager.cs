@@ -38,6 +38,11 @@ namespace ApiBooks.BusinessLayer.Concrete
             return _bookDal.GetById(id);
         }
 
+        public List<Book> TGetLastFourBooks()
+        {
+            return _bookDal.GetLastFourBooks();
+        }
+
         public void TInsert(Book entity)
         {
             _bookDal.Insert(entity);

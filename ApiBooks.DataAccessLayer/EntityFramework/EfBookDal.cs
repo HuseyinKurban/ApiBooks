@@ -24,5 +24,10 @@ namespace ApiBooks.DataAccessLayer.EntityFramework
         {
          return  _context.Books.Include(y=>y.Writer).Include(t=>t.Category).ToList();
         }
+
+        public List<Book> GetLastFourBooks()
+        {
+            return _context.Books.OrderByDescending(x=>x.BookId).Take(4).ToList();
+        }
     }
 }

@@ -10,5 +10,7 @@ namespace ApiBooks.BusinessLayer.Abstract
     public interface IBookService:IGenericService<Book>
     {
         List<Book> TGetBooksWithWriterAndCategoryList();
+        List<Book> TGetLastFourBooks();
+
     }
 }

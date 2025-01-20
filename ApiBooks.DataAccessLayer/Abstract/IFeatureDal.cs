@@ -9,5 +9,6 @@ namespace ApiBooks.DataAccessLayer.Abstract
 {
     public interface IFeatureDal:IGenericDal<Feature>
     {
+       
     }
 }

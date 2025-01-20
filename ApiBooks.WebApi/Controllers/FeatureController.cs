@@ -52,5 +52,7 @@ namespace ApiBooks.WebApi.Controllers
             var value = _featureService.TGetById(id);
             return Ok(value);
         }
+
+      
     }
 }
