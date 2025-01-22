@@ -11,5 +11,6 @@ namespace ApiBooks.DataAccessLayer.Abstract
     {
         List<Book> GetBooksWithWriterAndCategoryList();
         List<Book> GetLastFourBooks();
+        Book GetRandomBook();
     }
 }

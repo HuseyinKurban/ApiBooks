@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiBooks.BusinessLayer", "A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiBooks.WebApi", "ApiBooks.WebApi\ApiBooks.WebApi.csproj", "{2989691E-1E3C-4442-9BCA-DC6D8B3F9A2B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiBooks.WebUI", "ApiBooks.WebUI\ApiBooks.WebUI.csproj", "{C2FFFD81-F36C-4ABD-A431-1C30C5F7FD1D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{2989691E-1E3C-4442-9BCA-DC6D8B3F9A2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2989691E-1E3C-4442-9BCA-DC6D8B3F9A2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2989691E-1E3C-4442-9BCA-DC6D8B3F9A2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2FFFD81-F36C-4ABD-A431-1C30C5F7FD1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2FFFD81-F36C-4ABD-A431-1C30C5F7FD1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2FFFD81-F36C-4ABD-A431-1C30C5F7FD1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2FFFD81-F36C-4ABD-A431-1C30C5F7FD1D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

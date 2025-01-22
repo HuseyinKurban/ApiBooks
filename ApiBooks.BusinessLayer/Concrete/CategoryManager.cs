@@ -33,6 +33,8 @@ namespace ApiBooks.BusinessLayer.Concrete
             return _categoryDal.GetById(id);
         }
 
+    
+
         public void TInsert(Category entity)
         {
             _categoryDal.Insert(entity);

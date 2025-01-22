@@ -9,6 +9,6 @@ namespace ApiBooks.BusinessLayer.Abstract
 {
     public interface ICategoryService:IGenericService<Category>
     {
-
+       
     }
 }

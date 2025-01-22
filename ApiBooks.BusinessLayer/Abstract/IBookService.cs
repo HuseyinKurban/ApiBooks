@@ -11,6 +11,7 @@ namespace ApiBooks.BusinessLayer.Abstract
     {
         List<Book> TGetBooksWithWriterAndCategoryList();
         List<Book> TGetLastFourBooks();
+        Book TGetRandomBook();
 
     }
 }

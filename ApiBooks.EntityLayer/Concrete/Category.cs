@@ -13,6 +13,8 @@ namespace ApiBooks.EntityLayer.Concrete
 
         public string CategoryName { get; set; }
 
+       
+
         // Nullable yaparak opsiyonel hale getiriyoruz yani zorunlu olmuyor
         [JsonIgnore] // Sonsuz döngüyü önlemek için
         public List<Book>? Books { get; set; } 

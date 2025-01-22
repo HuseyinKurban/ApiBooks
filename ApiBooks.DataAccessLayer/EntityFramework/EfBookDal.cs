@@ -22,12 +22,20 @@ namespace ApiBooks.DataAccessLayer.EntityFramework
 
         public List<Book> GetBooksWithWriterAndCategoryList()
         {
-         return  _context.Books.Include(y=>y.Writer).Include(t=>t.Category).ToList();
+            //yazar ve category tablosunu kitap tablosuyla birleştirmek için 
+            return _context.Books.Include(y => y.Writer).Include(t => t.Category).ToList();
         }
 
         public List<Book> GetLastFourBooks()
         {
-            return _context.Books.OrderByDescending(x=>x.BookId).Take(4).ToList();
+            //eklenen son 4 kitap için olan method.
+            return _context.Books.OrderByDescending(x => x.BookId).Take(4).ToList();
+        }
+
+        public Book GetRandomBook()
+        {
+            //rasgele sıralamak için bu methodu kullanıyorum.
+            return _context.Books.OrderBy(b => Guid.NewGuid()).FirstOrDefault(); 
         }
     }
 }

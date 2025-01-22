@@ -21,6 +21,7 @@ namespace ApiBooks.BusinessLayer.Concrete
         public void TDelete(int id)
         {
            _bookDal.Delete(id);
+            
         }
 
         public List<Book> TGetAll()
@@ -41,6 +42,11 @@ namespace ApiBooks.BusinessLayer.Concrete
         public List<Book> TGetLastFourBooks()
         {
             return _bookDal.GetLastFourBooks();
+        }
+
+        public Book TGetRandomBook()
+        {
+           return _bookDal.GetRandomBook();
         }
 
         public void TInsert(Book entity)

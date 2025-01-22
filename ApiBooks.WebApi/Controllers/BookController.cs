@@ -59,5 +59,12 @@ namespace ApiBooks.WebApi.Controllers
             var value = _bookService.TGetLastFourBooks();
             return Ok(value);
         }
+
+        [HttpGet("GetRandomBook")]
+        public IActionResult GetRandomBook()
+        {
+            var value = _bookService.TGetRandomBook();
+            return Ok(value);
+        }
     }
 }

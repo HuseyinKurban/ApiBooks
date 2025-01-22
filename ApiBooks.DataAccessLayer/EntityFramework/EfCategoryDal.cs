@@ -12,8 +12,13 @@ namespace ApiBooks.DataAccessLayer.EntityFramework
 {
     public class EfCategoryDal : GenericRepository<Category>, ICategoryDal
     {
+        private readonly ApiContext _context;
+
         public EfCategoryDal(ApiContext context) : base(context)
         {
+            _context = context;
         }
+
+    
     }
 }
