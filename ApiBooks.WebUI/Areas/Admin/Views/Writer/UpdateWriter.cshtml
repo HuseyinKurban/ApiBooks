@@ -1,0 +1,36 @@
+﻿@model UpdateWriterDto
+@{
+    ViewData["Title"] = "UpdateWriter";
+    Layout = "~/Areas/Admin/Views/Layout/Index.cshtml";
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Yazarlar</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Yazar Güncelleme Sayfası</div>
+                    </div>
+                    <div class="card-body">
+                        <form method="post">
+                            <input type="hidden" asp-for="WriterId" />
+                            <input type="text" asp-for="Name" class="form-control" placeholder="Yazarın Adını Yazınız" />
+                            <br />
+                            <input type="text" asp-for="Surname" class="form-control" placeholder="Yazarın Soyadını Yazınız" />
+                            <br />
+                            <input type="text" asp-for="About" class="form-control" placeholder="Yazarın Hakkında Bilgisini Yazınız" />
+                            <br />
+                            <input type="text" asp-for="ImageUrl" class="form-control" placeholder="Yazarın Görsel Linkini Yazınız" />
+                            <br />
+                            <button class="btn btn-primary">Yazar Güncelle</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

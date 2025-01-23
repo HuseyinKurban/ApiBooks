@@ -1,4 +1,4 @@
-﻿@model List<ApiBooks.WebUI.Dto.CategoryDto.ResultCategoryDto>
+﻿@model List<ResultCategoryDto>
 @{
     Layout = "~/Areas/Admin/Views/Layout/Index.cshtml";
 }
@@ -20,6 +20,7 @@
                             <thead>
                                 <tr>
                                     <th scope="col">Kategori Adı</th>
+                                    <th scope="col">Sil</th>
                                     <th scope="col">Güncelle</th>
                                 </tr>
                              
@@ -28,13 +29,11 @@
                                 @foreach (var item in Model)
                                 {
                                     <tr>
-
                                         <td>@item.CategoryName</td>
-                                        <td><a href="#" class="btn btn-success">Güncelle</a></td>
+                                        <td><a href="/Admin/Categories/DeleteCategory/@item.CategoryId" class="btn btn-danger">Sil</a></td>
+                                        <td><a href="/Admin/Categories/UpdateCategory/@item.CategoryId" class="btn btn-success">Güncelle</a></td>
                                     </tr>
-                                    <tr>
-                                        
-                                    </tr>
+                              
                                 }
 
                             </tbody>

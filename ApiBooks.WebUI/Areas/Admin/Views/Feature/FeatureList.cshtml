@@ -1,0 +1,58 @@
+﻿@model List<ResultFeatureDto>
+@{
+    ViewData["Title"] = "FeatureList";
+    Layout = "~/Areas/Admin/Views/Layout/Index.cshtml";
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Öne Çıkan Kitaplar</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Öne Çıkan Kitaplar Listesi</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-sub">
+                            Öne Çıkan Kitaplar ile ilgili bilgileri aşağıdaki panelden görebilirsiniz.
+                        </div>
+                        <table class="table mt-3">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Kitap Adı</th>
+                                    <th scope="col">Hakkında</th>
+                                    <th scope="col">Görsel</th>
+                                    <th scope="col">Yazar Adı Soyadı</th>
+                                    <th scope="col">Fiyatı</th>
+                                   
+                                </tr>
+
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.BookName</td>
+                                        <td>@(item.Description.Length < 20 ? item.Description : item.Description.Substring(0, 20))</td>
+                                        <td>
+                                            <img src="@item.ImageUrl" height="80" width="80" style="object-fit: cover;" />
+
+                                        </td>
+                                        <td>@item.WriterNameSurname</td>
+                                        <td>@item.BookPrice.ToString("N2") &nbsp;₺</td>
+                                       
+                                    </tr>
+
+                                }
+
+                            </tbody>
+                        </table>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

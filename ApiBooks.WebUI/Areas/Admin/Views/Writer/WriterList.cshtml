@@ -1,0 +1,59 @@
+﻿@model List<ResultWriterDto>
+@{
+    ViewData["Title"] = "WriterList";
+    Layout = "~/Areas/Admin/Views/Layout/Index.cshtml";
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Yazarlar</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Yazar Listesi</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-sub">
+                            Yazar ile ilgili işlemleri aşağıdaki panelden yapabilirsiniz.
+                        </div>
+                        <table class="table mt-3">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Görsel</th>
+                                    <th scope="col">Adı</th>
+                                    <th scope="col">Soyadı</th>
+                                    <th scope="col">Hakkında</th>
+                                    <th scope="col">Sil</th>
+                                    <th scope="col">Güncelle</th>
+                                </tr>
+
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            <img src="@item.ImageUrl" height="80" width="80" style="object-fit: cover;" />
+
+                                        </td>
+
+                                        <td>@item.Name</td>
+                                        <td>@item.Surname</td>
+                                        <td>@(item.About.Length<20 ? item.About : item.About.Substring(0,20))</td>
+                                        <td><a href="/Admin/Writer/DeleteWriter/@item.WriterId" class="btn btn-danger">Sil</a></td>
+                                        <td><a href="/Admin/Writer/UpdateWriter/@item.WriterId" class="btn btn-success">Güncelle</a></td>
+                                    </tr>
+
+                                }
+
+                            </tbody>
+                        </table>
+                        <a href="/Admin/Writer/CreateWriter" class="btn btn-primary">Yeni Yazar Ekle</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -3,6 +3,7 @@ using ApiBooks.BusinessLayer.Concrete;
 using ApiBooks.DataAccessLayer.Abstract;
 using ApiBooks.DataAccessLayer.Context;
 using ApiBooks.DataAccessLayer.EntityFramework;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,7 +23,13 @@ builder.Services.AddScoped<IFeatureDal,EfFeatureDal>();
 builder.Services.AddScoped<IWriterService,WriterManager>();
 builder.Services.AddScoped<IWriterDal,EfWriterDal>();
 
-builder.Services.AddControllers();
+builder.Services.AddControllers().AddJsonOptions(x =>
+{
+    x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve;
+    x.JsonSerializerOptions.WriteIndented = true;
+});
+
+//builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

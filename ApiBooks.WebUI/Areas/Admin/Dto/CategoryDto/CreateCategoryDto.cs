@@ -1,4 +1,4 @@
-﻿namespace ApiBooks.WebUI.Dto.CategoryDto
+﻿namespace ApiBooks.WebUI.Areas.Admin.Dto.CategoryDto
 {
     public class CreateCategoryDto
     {

@@ -16,7 +16,7 @@ namespace ApiBooks.EntityLayer.Concrete
        
 
         // Nullable yaparak opsiyonel hale getiriyoruz yani zorunlu olmuyor
-        [JsonIgnore] // Sonsuz döngüyü önlemek için
+        
         public List<Book>? Books { get; set; } 
     }
 }
