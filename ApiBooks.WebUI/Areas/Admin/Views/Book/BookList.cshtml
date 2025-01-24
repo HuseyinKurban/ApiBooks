@@ -25,7 +25,7 @@
                                     <th scope="col">Fiyatı</th>
                                     <th scope="col">Sayfa Sayısı</th>
                                     <th scope="col">Görseli</th>
-                                    <th scope="col">Yazar Adı</th>
+                                    <th scope="col">Yazar Bilgisi</th>
                                     <th scope="col">Kategori Adı</th>
                                     <th scope="col">Sil</th>
                                     <th scope="col">Güncelle</th>
@@ -41,7 +41,7 @@
                                         <td>@item.Price</td>
                                         <td>@item.Page</td>
                                         <td>@item.ImageUrl</td>
-                                        <td>@item.Writer.Name</td>
+                                        <td>@item.Writer.Name @item.Writer.Surname</td>
                                         <td>@item.Category.CategoryName</td>
                                         <td><a href="" class="btn btn-danger">Sil</a></td>
                                         <td><a href="" class="btn btn-success">Güncelle</a></td>
