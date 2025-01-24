@@ -38,19 +38,19 @@
                                
                                     <tr>
                                         <td>@item.Name</td>
-                                        <td>@item.Price</td>
+                                        <td>@item.Price.ToString("N2") ₺</td>
                                         <td>@item.Page</td>
                                         <td>@item.ImageUrl</td>
                                         <td>@item.Writer.Name @item.Writer.Surname</td>
                                         <td>@item.Category.CategoryName</td>
-                                        <td><a href="" class="btn btn-danger">Sil</a></td>
-                                        <td><a href="" class="btn btn-success">Güncelle</a></td>
+                                        <td><a href="/Admin/Book/DeleteBook/@item.BookId" class="btn btn-danger">Sil</a></td>
+                                        <td><a href="/Admin/Book/UpdateBook/@item.BookId" class="btn btn-success">Güncelle</a></td>
                                     </tr>
 
                                 }
                             </tbody>
                         </table>
-                        <a href="" class="btn btn-primary">Yeni Kitap Ekle</a>
+                        <a href="/Admin/Book/CreateBook" class="btn btn-primary">Yeni Kitap Ekle</a>
                     </div>
                 </div>
             </div>
@@ -58,4 +58,4 @@
     </div>
 </div>
 
-<pre>@Html.Raw(JsonConvert.SerializeObject(Model, Formatting.Indented))</pre>
+

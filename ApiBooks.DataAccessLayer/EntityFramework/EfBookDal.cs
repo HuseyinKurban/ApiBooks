@@ -29,13 +29,13 @@ namespace ApiBooks.DataAccessLayer.EntityFramework
         public List<Book> GetLastFourBooks()
         {
             //eklenen son 4 kitap için olan method.
-            return _context.Books.OrderByDescending(x => x.BookId).Take(4).ToList();
+            return _context.Books.Include(y => y.Writer).Include(v => v.Category).OrderByDescending(x => x.BookId).Take(4).ToList();
         }
 
         public Book GetRandomBook()
         {
             //rasgele sıralamak için bu methodu kullanıyorum.
-            return _context.Books.OrderBy(b => Guid.NewGuid()).FirstOrDefault(); 
+            return _context.Books.OrderBy(b => Guid.NewGuid()).FirstOrDefault();
         }
     }
 }

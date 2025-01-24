@@ -1,0 +1,128 @@
+﻿@model List<GetLastFourBookDto>
+@{
+    ViewData["Title"] = "DashboardIndex";
+    Layout = "~/Areas/Admin/Views/Layout/Index.cshtml";
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card card-stats card-info">
+
+                    <div class="card-body card-stats">
+                        <div class="row">
+                            <div class="col-5">
+                                <div class="icon-big text-center">
+                                    <i class="la la-star"></i>
+                                </div>
+                            </div>
+                            <div class="col-7 d-flex align-items-center">
+                                <div class="numbers">
+                                    <p class="card-category">Öne Çıkan Kitaplar</p>
+                                    <h4 class="card-title">@ViewBag.Feature</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card card-stats card-dark">
+
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-5">
+                                <div class="icon-big text-center">
+                                    <i class="la la-book"></i>
+                                </div>
+                            </div>
+                            <div class="col-7 d-flex align-items-center">
+                                <div class="numbers">
+                                    <p class="card-category">Kitap Sayısı</p>
+                                    <h4 class="card-title">@ViewBag.Book</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card card-stats card-primary">
+
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-5">
+                                <div class="icon-big text-center">
+                                    <i class="la la-user"></i>
+                                </div>
+                            </div>
+                            <div class="col-7 d-flex align-items-center">
+                                <div class="numbers">
+                                    <p class="card-category">Yazar Sayısı</p>
+                                    <h4 class="card-title">@ViewBag.Writer</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card card-stats card-danger">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-5">
+                                <div class="icon-big text-center">
+                                    <i class="la la-cogs"></i>
+                                </div>
+                            </div>
+                            <div class="col-7 d-flex align-items-center">
+                                <div class="numbers">
+                                    <p class="card-category">Kategori Sayısı</p>
+                                    <h4 class="card-title">@ViewBag.Category</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <br />
+
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header ">
+                    <h4 class="card-title">Son Eklenen 4 Kitap</h4>
+                </div>
+                <div class="card-body">
+                    <table class="table table-head-bg-success table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">Görsel</th>
+                                <th scope="col">Adı</th>
+                                <th scope="col">Sayfa Sayısı</th>
+                                <th scope="col">Yazarı</th>
+                                <th scope="col">Kategorisi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td><img src="@item.ImageUrl"  height="80" width="80" /></td>
+                                    <td>@item.Name</td>
+                                    <td>@item.Page</td>
+                                    <td>@item.Writer.Name @item.Writer.Surname</td>
+                                    <td>@item.Category.CategoryName</td>
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

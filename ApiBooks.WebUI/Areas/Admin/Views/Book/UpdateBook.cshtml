@@ -1,0 +1,53 @@
+﻿@model UpdateBookDto
+@{
+    ViewData["Title"] = "UpdateBook";
+    Layout = "~/Areas/Admin/Views/Layout/Index.cshtml";
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Kitaplar</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Kitap Güncelleme Sayfası</div>
+                    </div>
+                    <div class="card-body">
+                        <form method="post">
+                            <input type="hidden" asp-for="BookId" />
+                            <input type="text" asp-for="Name" class="form-control" placeholder="Kitap Adını Yazınız" />
+                            <br />
+                            <input type="text" asp-for="Price" class="form-control" placeholder="Kitap Fiyatını Yazınız" />
+                            <br />
+                            <input type="number" asp-for="Page" class="form-control" placeholder="Kitap Sayfa Sayısını Yazınız" />
+                            <br />
+                            <input type="text" asp-for="ImageUrl" class="form-control" placeholder="Kitap Görselininin Url Adresini Yazınız" />
+                            <br />
+
+                            <select asp-for="CategoryId" class="form-control" id="categoryDropdown" required>
+                                <option value="">Lütfen Kitabın Kategorisini Seçiniz</option>
+                                @foreach (var item in (List<SelectListItem>)ViewBag.Category)
+                                {
+                                    <option value="@item.Value">@item.Text</option>
+                                }
+                            </select>
+                            <br />
+                            <select asp-for="WriterId" required class="form-control" id="writerDropdown">
+                                <option value="">Lütfen Kitabın Yazarını Seçiniz</option>
+                                @foreach (var item in (List<SelectListItem>)ViewBag.Writer)
+                                {
+                                    <option value="@item.Value">@item.Text</option>
+                                }
+                            </select>
+                            <br />
+                            <button class="btn btn-warning">Kitap Güncelle</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
