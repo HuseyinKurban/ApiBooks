@@ -1,4 +1,5 @@
-﻿@model List<ResultBookDto>
+﻿@using Newtonsoft.Json
+@model List<ResultBookDto>
 @{
     ViewData["Title"] = "BookList";
     Layout = "~/Areas/Admin/Views/Layout/Index.cshtml";
@@ -34,6 +35,7 @@
                             <tbody>
                                 @foreach (var item in Model)
                                 {
+                               
                                     <tr>
                                         <td>@item.Name</td>
                                         <td>@item.Price</td>
@@ -41,13 +43,11 @@
                                         <td>@item.ImageUrl</td>
                                         <td>@item.Writer.Name</td>
                                         <td>@item.Category.CategoryName</td>
-                                        
                                         <td><a href="" class="btn btn-danger">Sil</a></td>
                                         <td><a href="" class="btn btn-success">Güncelle</a></td>
                                     </tr>
 
                                 }
-
                             </tbody>
                         </table>
                         <a href="" class="btn btn-primary">Yeni Kitap Ekle</a>
@@ -58,3 +58,4 @@
     </div>
 </div>
 
+<pre>@Html.Raw(JsonConvert.SerializeObject(Model, Formatting.Indented))</pre>

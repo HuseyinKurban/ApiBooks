@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ApiBooks.DataAccessLayer\ApiBooks.DataAccessLayer.csproj" />
+    <ProjectReference Include="..\ApiBooks.WebUI\ApiBooks.WebUI.csproj" />
   </ItemGroup>
 
 </Project>

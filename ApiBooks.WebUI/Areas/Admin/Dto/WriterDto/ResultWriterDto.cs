@@ -1,6 +1,4 @@
-﻿using ApiBooks.WebUI.Areas.Admin.Dto.BookDto;
-
-namespace ApiBooks.WebUI.Areas.Admin.Dto.WriterDto
+﻿namespace ApiBooks.WebUI.Areas.Admin.Dto.WriterDto
 {
     public class ResultWriterDto
     {

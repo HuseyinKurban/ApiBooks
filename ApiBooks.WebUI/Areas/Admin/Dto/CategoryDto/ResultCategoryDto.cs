@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
-
-namespace ApiBooks.WebUI.Areas.Admin.Dto.CategoryDto
+﻿namespace ApiBooks.WebUI.Areas.Admin.Dto.CategoryDto
 {
     public class ResultCategoryDto
     {

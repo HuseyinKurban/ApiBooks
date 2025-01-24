@@ -3,7 +3,7 @@ using ApiBooks.BusinessLayer.Concrete;
 using ApiBooks.DataAccessLayer.Abstract;
 using ApiBooks.DataAccessLayer.Context;
 using ApiBooks.DataAccessLayer.EntityFramework;
-using System.Text.Json.Serialization;
+using Newtonsoft.Json;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -23,13 +23,14 @@ builder.Services.AddScoped<IFeatureDal,EfFeatureDal>();
 builder.Services.AddScoped<IWriterService,WriterManager>();
 builder.Services.AddScoped<IWriterDal,EfWriterDal>();
 
-builder.Services.AddControllers().AddJsonOptions(x =>
+builder.Services.AddControllers().AddNewtonsoftJson(options =>
 {
-    x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve;
-    x.JsonSerializerOptions.WriteIndented = true;
+    options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+    options.SerializerSettings.NullValueHandling = NullValueHandling.Ignore;
 });
 
-//builder.Services.AddControllers();
+
+builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

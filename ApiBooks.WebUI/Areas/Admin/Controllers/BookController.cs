@@ -1,7 +1,6 @@
 ﻿using ApiBooks.WebUI.Areas.Admin.Dto.BookDto;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using System.Text;
 
 
 namespace ApiBooks.WebUI.Areas.Admin.Controllers
@@ -16,19 +15,22 @@ namespace ApiBooks.WebUI.Areas.Admin.Controllers
             _httpClientFactory = httpClientFactory;
         }
 
-       public async Task<IActionResult> BookList()
+        public async Task<IActionResult> BookList()
         {
-            var client=_httpClientFactory.CreateClient();
-
+            var client = _httpClientFactory.CreateClient();
             var responseMessage = await client.GetAsync("https://localhost:7051/api/Book");
 
-            if(responseMessage.IsSuccessStatusCode)
+            if (responseMessage.IsSuccessStatusCode)
             {
-                var jsonData= await responseMessage.Content.ReadAsStringAsync();
-                var values=JsonConvert.DeserializeObject<List<ResultBookDto>>(jsonData);
+                var jsonData = await responseMessage.Content.ReadAsStringAsync();
+ 
+                var values = JsonConvert.DeserializeObject<List<ResultBookDto>>(jsonData);
                 return View(values);
             }
             return View();
         }
+
+
+
     }
 }
