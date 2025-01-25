@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ApiBooks.EntityLayer.Concrete;
 
-namespace ApiBooks.EntityLayer.Concrete
+namespace ApiBooks.WebUI.Areas.Admin.Dto.BookDto
 {
-    public class Book
+    public class GetRandomBookDto
     {
         public int BookId { get; set; }
         public string Name { get; set; }
@@ -14,11 +10,10 @@ namespace ApiBooks.EntityLayer.Concrete
         public int Page { get; set; }
         public string ImageUrl { get; set; }
         public string Description { get; set; }
-
         public int WriterId { get; set; }
-        public Writer? Writer { get; set; }
+        public Writer Writer { get; set; }
 
         public int CategoryId { get; set; }
-        public Category? Category { get; set; }
+        public Category Category { get; set; }
     }
 }

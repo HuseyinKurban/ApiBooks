@@ -35,7 +35,9 @@ namespace ApiBooks.DataAccessLayer.EntityFramework
         public Book GetRandomBook()
         {
             //rasgele sıralamak için bu methodu kullanıyorum.
-            return _context.Books.OrderBy(b => Guid.NewGuid()).FirstOrDefault();
+            var book = _context.Books.Include(x => x.Writer).Include(y => y.Category).OrderBy(q => Guid.NewGuid()).FirstOrDefault();
+            return book;
+
         }
     }
 }

@@ -23,6 +23,9 @@ builder.Services.AddScoped<IFeatureDal,EfFeatureDal>();
 builder.Services.AddScoped<IWriterService,WriterManager>();
 builder.Services.AddScoped<IWriterDal,EfWriterDal>();
 
+builder.Services.AddScoped<IQuoteService,QuoteManager>();
+builder.Services.AddScoped<IQuoteDal,EfQuoteDal>();
+
 builder.Services.AddControllers().AddNewtonsoftJson(options =>
 {
     options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;

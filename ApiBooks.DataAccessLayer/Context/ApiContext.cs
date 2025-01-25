@@ -19,6 +19,7 @@ namespace ApiBooks.DataAccessLayer.Context
         public DbSet<Category> Categories { get; set; }
         public DbSet<Feature> Features { get; set; }
         public DbSet<Writer> Writers { get; set; }
+        public DbSet<Quote> Quotes { get; set; }
 
     }
 }

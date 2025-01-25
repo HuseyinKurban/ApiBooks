@@ -1,0 +1,45 @@
+﻿@model GetRandomBookDto
+<section id="best-selling" class="leaf-pattern-overlay">
+    <div class="corner-pattern-overlay"></div>
+    <div class="container">
+        <div class="row justify-content-center">
+
+            <div class="col-md-8">
+
+                <div class="row">
+
+                    <div class="col-md-6">
+                        <figure class="products-thumb">
+                            <img src="~/booksaw-1.0.0/images/single-image.jpg" alt="book" class="single-image">
+                        </figure>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="product-entry">
+                            <h2 class="section-title divider">Günün Önerilen Kitabı</h2>
+
+                            <div class="products-content">
+                                <div class="author-name">Yazar: @Model.Writer.Name @Model.Writer.Surname </div>
+                                <h3 class="item-title">@Model.Name</h3>
+                                <p>
+                                   @Model.Description
+                                </p>
+                                <div class="item-price">₺ @Model.Price</div>
+                                <div class="btn-wrap">
+                                    <a href="#" class="btn-accent-arrow">
+                                        Hemen Satın Al <i class="icon icon-ns-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                <!-- / row -->
+
+            </div>
+
+        </div>
+    </div>
+</section>
