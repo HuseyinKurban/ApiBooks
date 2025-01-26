@@ -1,6 +1,7 @@
 ﻿using ApiBooks.BusinessLayer.Abstract;
 using ApiBooks.DataAccessLayer.Abstract;
 using ApiBooks.EntityLayer.Concrete;
+using ApiBooks.WebUI.Areas.Admin.Dto.WriterDto;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,6 +33,11 @@ namespace ApiBooks.BusinessLayer.Concrete
         public Writer TGetById(int id)
         {
             return _writerDal.GetById(id);
+        }
+
+        public List<Writer> TGetLastWriter()
+        {
+           return _writerDal.GetLastWriter();
         }
 
         public void TInsert(Writer entity)

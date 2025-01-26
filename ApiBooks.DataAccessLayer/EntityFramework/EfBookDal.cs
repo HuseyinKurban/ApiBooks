@@ -39,5 +39,10 @@ namespace ApiBooks.DataAccessLayer.EntityFramework
             return book;
 
         }
+
+        public List<Book> GetRandomBooksForSale()
+        {
+           return _context.Books.Include(x => x.Writer).Include(y => y.Category).OrderBy(q => Guid.NewGuid()).Take(4).ToList();
+        }
     }
 }

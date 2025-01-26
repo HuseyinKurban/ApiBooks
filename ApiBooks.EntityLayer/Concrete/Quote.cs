@@ -13,5 +13,6 @@ namespace ApiBooks.EntityLayer.Concrete
         public string Description { get; set; }
 
         public string WriterNameSurname { get; set; }
+
     }
 }

@@ -1,0 +1,46 @@
+﻿@model List<GetRandomBooksForSale>
+
+<section id="special-offer" class="bookshelf pb-5 mb-5">
+
+	<div class="section-header align-center">
+		<div class="title">
+			<span>Fırsatları yakalayın</span>
+		</div>
+		<h2 class="section-title">Teklifli Kitaplar</h2>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="inner-content">
+				<div class="product-list" data-aos="fade-up">
+					<div class="grid product-grid">
+						@foreach (var item in Model)
+						{
+							decimal indirim =(item.Price*20)/100;
+							decimal tutar = item.Price - indirim;
+							<div class="product-item">
+								<figure class="product-style">
+									<img src="@item.ImageUrl" alt="Books" class="product-item">
+									<button type="button" class="add-to-cart" data-product-tile="add-to-cart">
+										Sepete Ekle
+									</button>
+								</figure>
+								<figcaption>
+									<h3>@item.Name</h3>
+								
+									<span>Yazar : @item.Writer.Name @item.Writer.Surname</span>
+									<div class="book-pages">📖 @item.Page Sayfa</div> <!-- Sayfa sayısını ekledik -->
+									<div class="item-price">
+										<span class="prev-price">₺ @item.Price</span>₺ @tutar
+									</div>
+									
+								</figcaption>
+							</div>
+						}
+					
+					</div><!--grid-->
+				</div>
+			</div><!--inner-content-->
+		</div>
+	</div>
+</section>

@@ -52,5 +52,12 @@ namespace ApiBooks.WebApi.Controllers
             var value = _writerService.TGetById(id);
             return Ok(value);
         }
+
+        [HttpGet("GetLastWriter")]
+        public IActionResult GetLastWriter()
+        {
+            var value = _writerService.TGetLastWriter();
+            return Ok(value);
+        }
     }
 }

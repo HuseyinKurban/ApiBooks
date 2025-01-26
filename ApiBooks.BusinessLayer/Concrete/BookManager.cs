@@ -51,6 +51,11 @@ namespace ApiBooks.BusinessLayer.Concrete
            return _bookDal.GetRandomBook();
         }
 
+        public List<Book> TGetRandomBooksForSale()
+        {
+           return _bookDal.GetRandomBooksForSale();
+        }
+
         public void TInsert(Book entity)
         {
             _bookDal.Insert(entity);

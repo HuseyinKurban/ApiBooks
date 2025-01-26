@@ -16,8 +16,8 @@ namespace ApiBooks.EntityLayer.Concrete
         public string ImageUrl { get; set; }
 
         // Nullable yaparak opsiyonel hale getiriyoruz yani zorunlu olmuyor
-     
-        public List<Book>? Books { get; set; }
+
+        public List<Book> Books { get; set; } 
 
     }
 }
