@@ -12,6 +12,7 @@ namespace ApiBooks.DataAccessLayer.Abstract
         List<Book> GetBooksWithWriterAndCategoryList();
         List<Book> GetLastFourBooks();
         List<Book> GetRandomBooksForSale();
+        List<Book> GetBooksByCategoryId(int id);
         Book GetRandomBook();
     }
 }

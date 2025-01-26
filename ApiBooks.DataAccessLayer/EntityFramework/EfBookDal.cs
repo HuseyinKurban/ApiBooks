@@ -20,6 +20,11 @@ namespace ApiBooks.DataAccessLayer.EntityFramework
             _context = context;
         }
 
+        public List<Book> GetBooksByCategoryId(int id)
+        {
+           return _context.Books.Where(x=>x.CategoryId==id).ToList();
+        }
+
         public List<Book> GetBooksWithWriterAndCategoryList()
         {
             //yazar ve category tablosunu kitap tablosuyla birleştirmek için 

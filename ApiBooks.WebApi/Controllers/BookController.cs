@@ -73,5 +73,13 @@ namespace ApiBooks.WebApi.Controllers
             var value = _bookService.TGetRandomBooksForSale();
             return Ok(value);
         }
+
+
+        [HttpGet("GetBooksByCategoryId")]
+        public IActionResult GetBooksByCategoryId(int id)
+        {
+            var value = _bookService.TGetBooksByCategoryId(id);
+            return Ok(value);
+        }
     }
 }
