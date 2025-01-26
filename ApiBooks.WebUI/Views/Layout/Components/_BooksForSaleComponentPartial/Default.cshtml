@@ -4,9 +4,9 @@
 
 	<div class="section-header align-center">
 		<div class="title">
-			<span>Fırsatları yakalayın</span>
+			<span>Kitapların Dünyasına Adım Atın</span>
 		</div>
-		<h2 class="section-title">Teklifli Kitaplar</h2>
+		<h2 class="section-title">Sürpriz %20 İndirimler!</h2>
 	</div>
 
 	<div class="container">
@@ -16,11 +16,11 @@
 					<div class="grid product-grid">
 						@foreach (var item in Model)
 						{
-							decimal indirim =(item.Price*20)/100;
-							decimal tutar = item.Price - indirim;
+							decimal indirim = item.Price * 0.20m;
+							decimal tutar = item.Price - indirim; 
 							<div class="product-item">
 								<figure class="product-style">
-									<img src="@item.ImageUrl" alt="Books" class="product-item">
+									<img src="@item.ImageUrl" style="height:400px; width: auto!important" alt="Books" class="product-item">
 									<button type="button" class="add-to-cart" data-product-tile="add-to-cart">
 										Sepete Ekle
 									</button>
@@ -31,7 +31,7 @@
 									<span>Yazar : @item.Writer.Name @item.Writer.Surname</span>
 									<div class="book-pages">📖 @item.Page Sayfa</div> <!-- Sayfa sayısını ekledik -->
 									<div class="item-price">
-										<span class="prev-price">₺ @item.Price</span>₺ @tutar
+										 <span class="prev-price">₺ @item.Price</span> ₺ @tutar.ToString("0.00")
 									</div>
 									
 								</figcaption>
