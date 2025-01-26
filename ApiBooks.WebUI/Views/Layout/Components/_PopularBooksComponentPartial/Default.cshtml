@@ -1,66 +1,44 @@
 ﻿@model List<ResultCategoryDto>
 
 <section id="popular-books" class="bookshelf py-5 my-5">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
 
-				<div class="section-header align-center">
-					<div class="title">
-						<span>📚 Kategorilere Göre Kitap Arşivi</span>
-					</div>
-					<h2 class="section-title">Keşfet: Kitap Koleksiyonu</h2>
-				</div>
+                <div class="section-header align-center">
+                    <div class="title">
+                        <span>📚 Kategorilere Göre Kitap Arşivi</span>
+                    </div>
+                    <h2 class="section-title">Keşfet: Kitap Koleksiyonu</h2>
+                </div>
 
+                <!-- Kategori Sekmeleri -->
+                <ul class="tabs">
+                    <li data-tab-target="#all-genre" class="active tab">Hepsini Görüntüle</li>
 
-				<ul class="tabs">
-					<li data-tab-target="#all-genre" class="active tab">All Genre</li>
-					@foreach (var item in Model)
-					{
-						<li data-tab-target="#@item.CategoryName.Replace(" ", "-").ToLower()" class="tab">@item.CategoryName</li>
+                    @foreach (var item in Model)
+                    {
+                        <li data-tab-target="#@item.CategoryName.Replace(" ", "-").ToLower()" class="tab">@item.CategoryName</li>
+                    }
+                </ul>
 
-						
-					}
-				</ul>
+                <!-- Kitapların Listeleneceği Alan -->
+                <div class="tab-content">
+                    <!-- Tüm Kitapları Göster -->
+                    @await Component.InvokeAsync("_PopularBooksAllComponentPartial")
 
-				<div class="tab-content">
-					@await Component.InvokeAsync("_PopularBooksAllComponentPartial")
-					
-					
-					@foreach (var item in Model)
-					{
-						<div id="@item.CategoryName.Replace(" ", "-").ToLower()" data-tab-content>
-							<div class="row">
+                    <!-- Kategorilere Göre Kitapları Göster -->
+                    @foreach (var item in Model)
+                    {
+                        <div id="@item.CategoryName.Replace(" ", "-").ToLower()" data-tab-content>
+                            <div class="row">
+                                @await Component.InvokeAsync("_PopularBooksGetByIdComponentPartial", new { id = item.CategoryId })
+                            </div>
+                        </div>
+                    }
+                </div>
 
-								<div class="col-md-3">
-									<div class="product-item">
-										<figure class="product-style">
-											<img src="~/booksaw-1.0.0/images/tab-item2.jpg" alt="Books" class="product-item">
-											<button type="button" class="add-to-cart" data-product-tile="add-to-cart">
-												Add to
-												Cart
-											</button>
-										</figure>
-										<figcaption>
-											<h3>Peaceful Enlightment</h3>
-											<span>Marmik Lama</span>
-											<div class="item-price">$ 40.00</div>
-										</figcaption>
-									</div>
-								</div>
-
-
-							</div>
-						</div>
-					}
-					
-
-
-
-				</div>
-
-			</div><!--inner-tabs-->
-
-		</div>
-	</div>
+            </div><!--inner-tabs-->
+        </div>
+    </div>
 </section>
