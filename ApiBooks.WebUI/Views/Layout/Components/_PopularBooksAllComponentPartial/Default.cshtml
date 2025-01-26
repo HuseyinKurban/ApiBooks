@@ -1,0 +1,29 @@
+﻿@model List<ResultBookDto>
+
+<div id="all-genre" data-tab-content class="active">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-3">
+                <div class="product-item">
+
+                    <figure class="product-style">
+                        <img src="@item.ImageUrl" alt="Books" class="product-item">
+                        <button type="button" class="add-to-cart" data-product-tile="add-to-cart">
+                            Sepete Ekle
+                        </button>
+                    </figure>
+                    <figcaption>
+                        <h3>@item.Name</h3>
+                        <span>@item.Writer.Name @item.Writer.Surname</span>
+                        <div class="item-price">₺ @item.Price</div>
+                    </figcaption>
+
+
+                </div>
+            </div>
+
+        }
+
+    </div>
+</div>
