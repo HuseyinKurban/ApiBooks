@@ -22,7 +22,8 @@ namespace ApiBooks.DataAccessLayer.EntityFramework
 
         public List<Book> GetBooksByCategoryId(int id)
         {
-           return _context.Books.Where(x=>x.CategoryId==id).ToList();
+            return _context.Books.Include(a => a.Writer).Where(x => x.CategoryId == id).ToList();
+
         }
 
         public List<Book> GetBooksWithWriterAndCategoryList()
