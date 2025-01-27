@@ -12,7 +12,6 @@
                     <h2 class="section-title">Keşfet: Kitap Koleksiyonu</h2>
                 </div>
 
-                <!-- Kategori Sekmeleri -->
                 <ul class="tabs">
                     <li data-tab-target="#all-genre" class="active tab">Hepsini Görüntüle</li>
 
@@ -22,12 +21,12 @@
                     }
                 </ul>
 
-                <!-- Kitapların Listeleneceği Alan -->
+          
                 <div class="tab-content">
-                    <!-- Tüm Kitapları Göster -->
+                
                     @await Component.InvokeAsync("_PopularBooksAllComponentPartial")
 
-                    <!-- Kategorilere Göre Kitapları Göster -->
+                  
                     @foreach (var item in Model)
                     {
                         <div id="@item.CategoryName.Replace(" ", "-").ToLower()" data-tab-content>
@@ -38,7 +37,7 @@
                     }
                 </div>
 
-            </div><!--inner-tabs-->
+            </div>
         </div>
     </div>
 </section>
