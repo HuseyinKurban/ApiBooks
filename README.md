@@ -1,7 +1,7 @@
 # ApiBooks Projesi
 
-**Proje Hakkında:**  
-ApiBooks, kitap yönetimi ve keşif platformudur. Kullanıcılar, öne çıkan kitapları keşfedebilir, rastgele kitap önerileri alabilir ve kategorilere göre kitapları inceleyebilirler. Admin paneli üzerinden kitaplar, yazarlar ve kategoriler yönetilebilir. Bu proje, **ASP.NET Core 6.0**, **MSSQL** ve **Entity Framework** kullanılarak geliştirilmiştir. Proje, aynı zamanda **N Katmanlı Mimari** ve **API** yapısı ile esnek ve sürdürülebilir bir yapı sunar.
+## Proje Hakkında
+**ApiBooks**, kitap yönetimi ve keşif platformudur. Kullanıcılar, öne çıkan kitapları keşfedebilir, rastgele kitap önerileri alabilir ve kategorilere göre kitapları inceleyebilirler. Admin paneli üzerinden kitaplar, yazarlar ve kategoriler yönetilebilir. Bu proje, **ASP.NET Core 6.0**, **MSSQL** ve **Entity Framework** kullanılarak geliştirilmiştir. Proje, aynı zamanda **N Katmanlı Mimari** ve **API** yapısı ile esnek ve sürdürülebilir bir yapı sunar.
 
 ## 🚀 Kullanılan Teknolojiler ve Araçlar:
 
