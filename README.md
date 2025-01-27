@@ -27,7 +27,7 @@
 ## 🛠️ Admin Paneli Özellikleri:
 
 - **Dashboard**: Öne çıkan kitap sayısı, toplam kitap, yazar ve kategori bilgileri anlık olarak görüntülenir.
-- **Öne Çıkan Kitaplar**: Kitaplar, API üzerinden CRUD işlemleri ile yönetilir; admin panelinde sadece görüntülenir.
+- **Öne Çıkan Kitaplar**: Liste, API üzerinden yönetilir ve admin panelinde sadece görüntülenir.
 - **Kitap Yönetimi**: CRUD işlemleri ile kitaplar yönetilebilir. Kitap eklerken, mevcut yazarlar ve kategoriler sistem üzerinden seçilir.
 - **Kategori Yönetimi**: CRUD işlemleri ile kategoriler eklenebilir, düzenlenebilir ve silinebilir.
 - **Yazar Yönetimi**: Yazarlar listelenebilir, düzenlenebilir ve yeni yazar eklenebilir.
